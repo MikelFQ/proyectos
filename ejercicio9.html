@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <style type="text/css">
+        input{margin-top: 2em}
+        select{margin-top: 2em}
+        #div{display: none;}
+
+        </style>
+        <script type="text/javascript">
+        function cambia(){
+          if(document.getElementById("check").style.value=="1"){
+            document.getElementById("check").style.value="0";
+            document.getElementById("div").style.display="none"
+          }
+          else{
+            document.getElementById("check").style.value="1"
+            document.getElementById("div").style.display="block"
+          }
+        }
+
+
+        </script>
+
+    </head>
+    <body>
+
+      <h1>Contacto</h1>
+      <p>Escribe!</p>
+
+      <form action="maneja_formulario.php" method="post">
+        <fieldset>
+          <legend>Información</legend>
+          Nombre
+          <input type="text" name="nombre" value="" />
+          <br/>
+          Email
+          <input type="text" name="email" value="" />
+          <br/>
+          Teléfono
+          <input type="text" name="telefono" value="" size="10" maxlength="9" />
+          </br>
+          Dirección
+          <input type="text" name="direccion" value="" />
+          <br/>
+          <label for="comunidad">Comunidad</label>
+          <select id="comunidad" name="comunidad">
+          <option value="" selected="selected">- selecciona -</option>
+          <option value="Canarias">Canarias</option>
+          <option value="Islas Baleares">Islas Baleares</option>
+          <option value="Cataluña">Cataluña</option>
+          <option value="Comunidad Valenciana">Comunidad Valenciana</option> </select>
+          </br>
+          Código Postal
+          <input type="text" name="cp" value=""/>
+          </fieldset>
+
+          <fieldset>
+            Pincha aquí para recibir información:
+            <input id="check" name="confirma" type="checkbox" value="0"/ onclick="cambia()">
+            </br>
+            <div id="div">
+              <input name="1" type="checkbox" value=""/>
+              Tenerife </br>
+              <input name="2" type="checkbox" value=""/>
+              Tenerife Calma </br>
+              <input name="3" type="checkbox" value=""/>
+              Tenerife Playas </br>
+            </div>
+            <input name"envia" type="submit" value="Enviar"/>
+           </fieldset> </form>
+
+
+    </body>
+</html>
